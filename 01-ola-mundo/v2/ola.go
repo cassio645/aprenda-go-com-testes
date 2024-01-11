@@ -1,4 +1,4 @@
-// Pacote do primeiro capítulo do curso.
+// Pacote com a função Ola() recebendo argumentos ou não.
 package main
 
 // Criando uma constante com prefixo em português
@@ -14,7 +14,6 @@ func Ola(nome string) string {
 	return prefixoPtBr + nome
 }
 
-// Função main
 func main() {
 
 }
