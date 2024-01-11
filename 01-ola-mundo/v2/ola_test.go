@@ -1,6 +1,9 @@
-package main
+package ola
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // Usando t.Run para implementar subtestes
 func TestOla(t *testing.T) {
@@ -32,4 +35,12 @@ func TestOla(t *testing.T) {
 
 		verificaMsgCorreta(t, resultado, esperado)
 	})
+}
+
+func ExampleOla(){
+	fmt.Println(Ola(""))
+	fmt.Println(Ola("Cássio"))
+	// Output:
+	// Olá mundo!
+	// Olá Cássio
 }

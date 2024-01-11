@@ -1,5 +1,5 @@
 // Pacote do primeiro capítulo do curso.
-package main
+package ola
 
 import "fmt"
 

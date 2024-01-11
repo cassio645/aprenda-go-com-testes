@@ -1,6 +1,9 @@
-package main
+package ola
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // Função que testa Ola() e compara o resultado obtido com o valor esperado
 func TestOla(t *testing.T) {
@@ -12,6 +15,12 @@ func TestOla(t *testing.T) {
 	}
 }
 
+func ExampleOla(){
+	fmt.Println(Ola())
+	// Output:
+	// Olá mundo!
+}
+
 func TestBomDia(t *testing.T){
 	resultado := BomDia("Cássio")
 	esperado := "Bom dia Cássio!"
@@ -21,3 +30,8 @@ func TestBomDia(t *testing.T){
 	}
 }
 
+func ExampleBomDia(){
+	fmt.Println(BomDia("Cássio"))
+	// Output:
+	// Bom dia Cássio!
+}

@@ -1,5 +1,5 @@
 // Pacote com a função Ola() recebendo argumentos ou não.
-package main
+package ola
 
 // Criando uma constante com prefixo em português
 const prefixoPtBr = "Olá "

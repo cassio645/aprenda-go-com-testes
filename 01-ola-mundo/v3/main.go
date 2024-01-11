@@ -1,5 +1,5 @@
 // Pacote com a função Ola() recebendo idioma.
-package main
+package ola
 
 // Criando constantes de idiomas
 const espanhol = "es"
