@@ -1,6 +1,7 @@
 package carteira
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -65,4 +66,27 @@ func TestCarteira(t *testing.T) {
 		confirmaErro(t, erro, ErroSaldoInsuficiente) // queremos erro
 	})
 
+}
+
+func ExampleCarteira_Depositar() {
+	carteira := Carteira{}
+	carteira.Depositar(Bitcoin(20))
+	fmt.Println(carteira.Saldo())
+	// Output: 20 BTC
+}
+
+func ExampleCarteira_Saldo() {
+	carteira := Carteira{saldo: Bitcoin(10)}
+	fmt.Println(carteira.Saldo())
+	// Output: 10 BTC
+}
+
+func ExampleCarteira_Retirar() {
+	carteira := Carteira{saldo: Bitcoin(30)}
+	err := carteira.Retirar(Bitcoin(15))
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(carteira.Saldo())
+	// Output: 15 BTC
 }

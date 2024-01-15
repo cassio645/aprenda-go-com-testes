@@ -8,7 +8,7 @@ type Forma interface {
 	Area() float64
 }
 
-////////// Struct Retangulo
+// Struct Retangulo
 type Retangulo struct {
 	Largura float64
 	Altura  float64
@@ -24,7 +24,7 @@ func Perimetro(r Retangulo) float64 {
 	return 2 * (r.Altura + r.Largura)
 }
 
-///////// Struct Circulo
+//Struct Circulo
 type Circulo struct {
 	Raio float64
 }
@@ -34,7 +34,7 @@ func (c Circulo) Area() float64 {
 	return math.Pi * (c.Raio * c.Raio)
 }
 
-//////// Struct Triangulo
+// Struct Triangulo
 type Triangulo struct {
 	Base   float64
 	Altura float64

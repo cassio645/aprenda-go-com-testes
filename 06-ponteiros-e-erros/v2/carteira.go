@@ -41,26 +41,3 @@ func (c *Carteira) Retirar(quantidade Bitcoin) error {
 func (c *Carteira) Saldo() Bitcoin {
 	return c.saldo
 }
-
-func ExampleDepositar() {
-	carteira := Carteira{}
-	carteira.Depositar(Bitcoin(20))
-	fmt.Println(carteira.Saldo())
-	// Output: 20 BTC
-}
-
-func ExampleSaldo(){
-	carteira := Carteira{saldo: Bitcoin(10)}
-	fmt.Println(carteira.Saldo())
-	// Output: 10 BTC
-}
-
-func ExampleRetirar() {
-	carteira := Carteira{saldo: Bitcoin(30)}
-	err := carteira.Retirar(Bitcoin(15))
-	if err != nil {
-		fmt.Println(err)
-	}
-	fmt.Println(carteira.Saldo())
-	// Output: 15 BTC
-}

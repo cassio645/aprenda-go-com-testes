@@ -2,6 +2,7 @@ package formas
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -23,7 +24,7 @@ func ExamplePerimetro() {
 }
 
 // Testando com table driven tests, uma lista de testes
-func TestArea(t *testing.T) {
+func TestForma(t *testing.T) {
 	// Criando uma lista de structs com a interface Forma
 	testesArea := []struct {
 		nome     string
@@ -49,16 +50,21 @@ func TestArea(t *testing.T) {
 	}
 }
 
-func ExampleArea() {
-	retangulo := Retangulo{Largura: 12.0, Altura: 6.0}
-	circulo := Circulo{Raio: 10.0}
-	triangulo := Triangulo{Base: 12.0, Altura: 6.0}
+func ExampleForma() {
+	// Criando uma lista de structs com a interface Forma
+	formas := []Forma{
+		Retangulo{Largura: 12.0, Altura: 6.0},
+		Circulo{Raio: 10.0},
+		Triangulo{Base: 12.0, Altura: 6.0},
+	}
 
-	fmt.Println(retangulo.Area())
-	fmt.Println(circulo.Area())
-	fmt.Println(triangulo.Area())
+	// Iterando sobre as formas e imprimindo o resultado da função Area
+	for _, forma := range formas {
+		fmt.Printf("%s - Área: %.2f\n", reflect.TypeOf(forma).Name(), forma.Area())
+	}
+
 	// Output:
-	// 72
-	// 314.1592653589793
-	// 36
+	// Retangulo - Área: 72.00
+	// Circulo - Área: 314.16
+	// Triangulo - Área: 36.00
 }
