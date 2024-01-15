@@ -1,4 +1,4 @@
-// Pacote dicionario com as funções Busca, Adiciona e Atualiza.
+// Pacote dicionario com as funções Busca, Adiciona, Atualiza e Deleta
 package dicionario
 
 // Mensagem de erro quando a palavra não for encontrada
@@ -57,4 +57,9 @@ func (d Dicionario) Atualiza(chave, valor string) error {
 		d[chave] = valor
 	}
 	return nil
+}
+
+// Função Deleta uma chave:valor do dicionario
+func (d Dicionario) Deleta(chave string){
+	delete(d, chave)
 }

@@ -161,3 +161,27 @@ func ExampleDicionario_Atualiza() {
 	fmt.Println(resultado)
 	// Output: Instrumento
 }
+
+func TestDeleta(t *testing.T) {
+	chave := "cadeira"
+	dicionario := Dicionario{chave: "Objeto"}
+
+	dicionario.Deleta(chave)
+
+	_, err := dicionario.Busca(chave)
+	if err != ErrNaoEncontrado {
+		t.Errorf("espera-se que '%s' seja deletado", chave)
+	}
+}
+
+func ExampleDicionario_Deleta() {
+	chave := "cadeira"
+	dicionario := Dicionario{chave: "Objeto"}
+	dicionario.Deleta("jornal")
+
+	_, err := dicionario.Busca(chave)
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Output: Palavra não encontrada.
+}
