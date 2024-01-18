@@ -10,8 +10,9 @@ import (
 func mockVerificadorWebsite(url string) bool {
 	if url == "waat://furhurterwe.geds" {
 		return false
+	} else {
+		return true
 	}
-	return true
 }
 
 func TestVerificaWebsites(t *testing.T) {
@@ -33,7 +34,6 @@ func TestVerificaWebsites(t *testing.T) {
 		t.Fatalf("esperado %v, resultado %v", esperado, resultado)
 	}
 }
-
 
 // Função Example para usar VerificaWebsites
 func ExampleVerificaWebsites() {
@@ -59,5 +59,5 @@ func ExampleVerificaWebsites() {
 	// Output:
 	// Website: http://nonexistentwebsite.com, Ativo: true
 	// Website: http://example.com, Ativo: true
-	
+
 }
